@@ -1,0 +1,10 @@
+{
+    "name": "Causeway Digital MakeCode Extension",
+    "description": "",
+    "dependencies": {
+    },
+    "files": [
+        "custom.ts",
+        "README.md"
+    ]
+}
