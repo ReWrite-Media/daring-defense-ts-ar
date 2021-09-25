@@ -10,3 +10,6 @@ This repository can be added as an **extension** in MakeCode.
 * click on **New Project**
 * click on **Extensions** under the gearwheel menu
 * search for **https://github.com/CausewayDigital/pxt-causeway-digital-extension** and import
+
+## Added blocks
+- Agent.dropAllItemsIndividually(direction)
