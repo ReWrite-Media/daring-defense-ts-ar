@@ -95,7 +95,7 @@ namespace cyber {
      * Firewall setup event
      */
     //% block="Create Firewall"
-    //% color="#569138"
+    //% color="#569138" weight=100
     export function setupFirewall(handler: () => void) {
         setupFirewallHandler();
     }
@@ -103,7 +103,7 @@ namespace cyber {
     /**
      * Allow all
      */
-    //% block="Allow all"
+    //% block="Allow all" weight=95
     export function allowAll() {
 
     }
@@ -111,7 +111,7 @@ namespace cyber {
     /**
      * Deny all
      */
-    //% block="Deny all"
+    //% block="Deny all" weight=90
     export function denyAll() {
         
     }
@@ -119,7 +119,7 @@ namespace cyber {
      /**
      * Add a new allow firewall rule
      */
-    //% block="Add allow firewall rule $firewallRule"
+    //% block="Add allow firewall rule $firewallRule" weight=85
     export function addAllowFirewallRule(firewallRule: Rule | CombinedRule) {
         firewallRule.addRule()
     }
@@ -128,7 +128,7 @@ namespace cyber {
     /**
      * Add a new allow firewall rule
      */
-    //% block="Add deny firewall rule $firewallRule"
+    //% block="Add deny firewall rule $firewallRule" weight=85
     export function addDenyFirewallRule(firewallRule: Rule | CombinedRule) {
         firewallRule.addRule()
     }
@@ -137,9 +137,9 @@ namespace cyber {
      * Hat rule
      */
     //% block="%hat"
-    //% color="#249ca3"
-    export function requireHat(hat: HasHat): Rule {
-        if (hat === HasHat.Hat){
+    //% color="#249ca3" weight=80
+    export function requireHat(hat: WearingHat): Rule {
+        if (hat === WearingHat.Hat){
             return new Rule(10, 20, 30, true);
         } else {
             return new Rule(10, 20, 30, false);
@@ -151,7 +151,7 @@ namespace cyber {
      * Holding item rule
      */
     //% block="holding %item"
-    //% color="#249ca3"
+    //% color="#249ca3" weight=80
     export function requireHoldingItem(item: HoldingItem): Rule {
         if (item === HoldingItem.Map){
             return new Rule(10, 20, 30, true);
@@ -169,7 +169,7 @@ namespace cyber {
      * Legs between rule
      */
     //% block="number of legs between %lowerLegs and %upperLegs"
-    //% color="#249ca3"
+    //% color="#249ca3" weight=80
     export function requireLegs(lowerLegs: number, upperLegs: number): Rule[] {
         let rules: Rule[]
         if (lowerLegs != upperLegs){
@@ -199,7 +199,7 @@ namespace cyber {
      * Eyewear rule
      */
     //% block="wearing %eyewear"
-    //% color="#249ca3"
+    //% color="#249ca3" weight=80
     export function requireEyewear(eyewear: WearingEyeware,): Rule {
         return new Rule(10, 20, 30, true);
         
@@ -210,7 +210,7 @@ namespace cyber {
      * Combining rules
      */
     //% block="%rule1 and %rule2"
-    //% color="#ff8353"
+    //% color="#ff8353" weight=81
     export function ruleAnd(rule1: Rule, rule2: Rule): CombinedRule {
         return new CombinedRule(rule1, rule2);
     }
