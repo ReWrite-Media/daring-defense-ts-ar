@@ -70,14 +70,17 @@ namespace cyber {
         enabled=true;
 
         public constructor(x: number, y: number, z: number, enabled: boolean){
-
+            this.x = x;
+            this.y = y;
+            this.z = z;
+            this.enabled = enabled;
         }
 
-        public addRule(){
+        public addRule(): void {
             blocks.place(STONE, pos(this.x, this.y, this.z))
         }
 
-        public removeRule(){
+        public removeRule(): void {
             blocks.place(AIR, pos(this.x, this.y, this.z))
         }
     }
@@ -95,11 +98,11 @@ namespace cyber {
 
         }
 
-        public addRule(){
+        public addRule(): void {
             blocks[`${this.rule1}-${this.rule2}`].addRule()
         }
 
-        public removeRule(){
+        public removeRule(): void {
             blocks[`${this.rule1}-${this.rule2}`].removeRule()
         }
     }
