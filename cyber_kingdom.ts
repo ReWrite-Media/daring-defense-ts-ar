@@ -179,7 +179,8 @@ namespace cyber {
     blocks_rules["10-8"] = new Rule(43, 64, -9, true, "10-8");
     blocks_rules["10-9"] = new Rule(44, 64, -9, true, "10-9");
     
-
+    let AllowAllRule = new Rule(35, 64, -29, true, "-1")
+    let DenyAllRule = new Rule(35, 64, -30, true, "-1")
 
     function setupFirewallHandler() {
         player.say("Firewall setup!")
@@ -198,9 +199,10 @@ namespace cyber {
      */
     //% block="Allow all" weight=95
     export function allowAll() {
-        for (let block_key of Object.keys(blocks_rules)) {
-            blocks_rules[block_key].addRule()
-        }
+        AllowAllRule.addRule()
+        //for (let block_key of Object.keys(blocks_rules)) {
+        //    blocks_rules[block_key].addRule()
+        //}
     }
 
     /**
@@ -208,9 +210,10 @@ namespace cyber {
      */
     //% block="Deny all" weight=90
     export function denyAll() {
-        for (let block_key of Object.keys(blocks_rules)) {
-            blocks_rules[block_key].removeRule()
-        }
+        DenyAllRule.addRule()
+        //for (let block_key of Object.keys(blocks_rules)) {
+        //    blocks_rules[block_key].removeRule()
+        //}
     }
 
     /**
@@ -227,7 +230,7 @@ namespace cyber {
      */
     //% block="Add deny firewall rule $firewallRule" weight=85
     export function addDenyFirewallRule(firewallRule: Rule | CombinedRule) {
-        firewallRule.addRule()
+        firewallRule.removeRule()
     }
 
     /**
