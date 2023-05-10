@@ -9,7 +9,7 @@ enum HoldingItem
      //% block="no item"
      NoItem = 0,
      //% block="sword"
-     Sword = None,
+     Sword = -1,
      //% block="hammer"
      Hammer = 1,
      //% block="map"
@@ -17,11 +17,11 @@ enum HoldingItem
      //% block="stone"
      Stone = 3,
      //% block="pickaxe"
-     Pickaxe = None,
+     Pickaxe = -1,
      //% block="diamond"
-     Diamond = None,
+     Diamond = -1,
      //% block="apple"
-     Apple = None,
+     Apple = -1,
 }
 
 /**
@@ -105,76 +105,74 @@ namespace cyber {
     }
 
     let blocks: {[key: string]: Rule} = {};
-    blocks[0] = new Rule(35, 64, -24, true);
-    blocks[-1] = new Rule(34, 64, -24, true);
-    blocks[1] = new Rule(36, 64, -24, true);
-    blocks[2] = new Rule(37, 64, -24, true);
-    blocks[3] = new Rule(38, 64, -24, true);
-    blocks[-1] = new Rule(34, 64, -24, true);
-    blocks[-1] = new Rule(34, 64, -24, true);
-    blocks[-1] = new Rule(34, 64, -24, true);
-    blocks[4] = new Rule(39, 64, -24, true);
-    blocks[5] = new Rule(40, 64, -24, true);
-    blocks[6] = new Rule(41, 64, -24, true);
-    blocks[7] = new Rule(42, 64, -24, true);
-    blocks[8] = new Rule(43, 64, -24, true);
-    blocks[9] = new Rule(44, 64, -24, true);
-    blocks[10] = new Rule(45, 64, -24, true);
-    blocks[1-0] = new Rule(35, 64, -18, true);
-    blocks[2-0] = new Rule(35, 64, -17, true);
-    blocks[3-0] = new Rule(35, 64, -16, true);
-    blocks[4-0] = new Rule(35, 64, -15, true);
-    blocks[5-0] = new Rule(35, 64, -14, true);
-    blocks[6-0] = new Rule(35, 64, -13, true);
-    blocks[7-0] = new Rule(35, 64, -12, true);
-    blocks[8-0] = new Rule(35, 64, -11, true);
-    blocks[9-0] = new Rule(35, 64, -10, true);
-    blocks[10-0] = new Rule(35, 64, -9, true);
-    blocks[2-1] = new Rule(36, 64, -17, true);
-    blocks[3-1] = new Rule(36, 64, -16, true);
-    blocks[4-1] = new Rule(36, 64, -15, true);
-    blocks[5-1] = new Rule(36, 64, -14, true);
-    blocks[6-1] = new Rule(36, 64, -13, true);
-    blocks[7-1] = new Rule(36, 64, -12, true);
-    blocks[8-1] = new Rule(36, 64, -11, true);
-    blocks[9-1] = new Rule(36, 64, -10, true);
-    blocks[10-1] = new Rule(36, 64, -9, true);
-    blocks[3-2] = new Rule(37, 64, -16, true);
-    blocks[4-2] = new Rule(37, 64, -15, true);
-    blocks[5-2] = new Rule(37, 64, -14, true);
-    blocks[6-2] = new Rule(37, 64, -13, true);
-    blocks[7-2] = new Rule(37, 64, -12, true);
-    blocks[8-2] = new Rule(37, 64, -11, true);
-    blocks[9-2] = new Rule(37, 64, -10, true);
-    blocks[10-2] = new Rule(37, 64, -9, true);
-    blocks[4-3] = new Rule(38, 64, -15, true);
-    blocks[5-3] = new Rule(38, 64, -14, true);
-    blocks[6-3] = new Rule(38, 64, -13, true);
-    blocks[7-3] = new Rule(38, 64, -12, true);
-    blocks[8-3] = new Rule(38, 64, -11, true);
-    blocks[9-3] = new Rule(38, 64, -10, true);
-    blocks[10-3] = new Rule(38, 64, -9, true);
-    blocks[5-4] = new Rule(39, 64, -14, true);
-    blocks[6-4] = new Rule(39, 64, -13, true);
-    blocks[7-4] = new Rule(39, 64, -12, true);
-    blocks[8-4] = new Rule(39, 64, -11, true);
-    blocks[9-4] = new Rule(39, 64, -10, true);
-    blocks[10-4] = new Rule(39, 64, -9, true);
-    blocks[6-5] = new Rule(40, 64, -13, true);
-    blocks[7-5] = new Rule(40, 64, -12, true);
-    blocks[8-5] = new Rule(40, 64, -11, true);
-    blocks[9-5] = new Rule(40, 64, -10, true);
-    blocks[10-5] = new Rule(40, 64, -9, true);
-    blocks[7-6] = new Rule(41, 64, -12, true);
-    blocks[8-6] = new Rule(41, 64, -11, true);
-    blocks[9-6] = new Rule(41, 64, -10, true);
-    blocks[10-6] = new Rule(41, 64, -9, true);
-    blocks[8-7] = new Rule(42, 64, -11, true);
-    blocks[9-7] = new Rule(42, 64, -10, true);
-    blocks[10-7] = new Rule(42, 64, -9, true);
-    blocks[9-8] = new Rule(43, 64, -10, true);
-    blocks[10-8] = new Rule(43, 64, -9, true);
-    blocks[10-9] = new Rule(44, 64, -9, true);
+blocks[-1] = new Rule(34, 64, -24, true);
+blocks[0] = new Rule(35, 64, -24, true);
+blocks[1] = new Rule(36, 64, -24, true);
+blocks[2] = new Rule(37, 64, -24, true);
+blocks[3] = new Rule(38, 64, -24, true);
+blocks[4] = new Rule(39, 64, -24, true);
+blocks[5] = new Rule(40, 64, -24, true);
+blocks[6] = new Rule(41, 64, -24, true);
+blocks[7] = new Rule(42, 64, -24, true);
+blocks[8] = new Rule(43, 64, -24, true);
+blocks[9] = new Rule(44, 64, -24, true);
+blocks[10] = new Rule(45, 64, -24, true);
+blocks[1-0] = new Rule(35, 64, -18, true);
+blocks[2-0] = new Rule(35, 64, -17, true);
+blocks[3-0] = new Rule(35, 64, -16, true);
+blocks[4-0] = new Rule(35, 64, -15, true);
+blocks[5-0] = new Rule(35, 64, -14, true);
+blocks[6-0] = new Rule(35, 64, -13, true);
+blocks[7-0] = new Rule(35, 64, -12, true);
+blocks[8-0] = new Rule(35, 64, -11, true);
+blocks[9-0] = new Rule(35, 64, -10, true);
+blocks[10-0] = new Rule(35, 64, -9, true);
+blocks[2-1] = new Rule(36, 64, -17, true);
+blocks[3-1] = new Rule(36, 64, -16, true);
+blocks[4-1] = new Rule(36, 64, -15, true);
+blocks[5-1] = new Rule(36, 64, -14, true);
+blocks[6-1] = new Rule(36, 64, -13, true);
+blocks[7-1] = new Rule(36, 64, -12, true);
+blocks[8-1] = new Rule(36, 64, -11, true);
+blocks[9-1] = new Rule(36, 64, -10, true);
+blocks[10-1] = new Rule(36, 64, -9, true);
+blocks[3-2] = new Rule(37, 64, -16, true);
+blocks[4-2] = new Rule(37, 64, -15, true);
+blocks[5-2] = new Rule(37, 64, -14, true);
+blocks[6-2] = new Rule(37, 64, -13, true);
+blocks[7-2] = new Rule(37, 64, -12, true);
+blocks[8-2] = new Rule(37, 64, -11, true);
+blocks[9-2] = new Rule(37, 64, -10, true);
+blocks[10-2] = new Rule(37, 64, -9, true);
+blocks[4-3] = new Rule(38, 64, -15, true);
+blocks[5-3] = new Rule(38, 64, -14, true);
+blocks[6-3] = new Rule(38, 64, -13, true);
+blocks[7-3] = new Rule(38, 64, -12, true);
+blocks[8-3] = new Rule(38, 64, -11, true);
+blocks[9-3] = new Rule(38, 64, -10, true);
+blocks[10-3] = new Rule(38, 64, -9, true);
+blocks[5-4] = new Rule(39, 64, -14, true);
+blocks[6-4] = new Rule(39, 64, -13, true);
+blocks[7-4] = new Rule(39, 64, -12, true);
+blocks[8-4] = new Rule(39, 64, -11, true);
+blocks[9-4] = new Rule(39, 64, -10, true);
+blocks[10-4] = new Rule(39, 64, -9, true);
+blocks[6-5] = new Rule(40, 64, -13, true);
+blocks[7-5] = new Rule(40, 64, -12, true);
+blocks[8-5] = new Rule(40, 64, -11, true);
+blocks[9-5] = new Rule(40, 64, -10, true);
+blocks[10-5] = new Rule(40, 64, -9, true);
+blocks[7-6] = new Rule(41, 64, -12, true);
+blocks[8-6] = new Rule(41, 64, -11, true);
+blocks[9-6] = new Rule(41, 64, -10, true);
+blocks[10-6] = new Rule(41, 64, -9, true);
+blocks[8-7] = new Rule(42, 64, -11, true);
+blocks[9-7] = new Rule(42, 64, -10, true);
+blocks[10-7] = new Rule(42, 64, -9, true);
+blocks[9-8] = new Rule(43, 64, -10, true);
+blocks[10-8] = new Rule(43, 64, -9, true);
+blocks[10-9] = new Rule(44, 64, -9, true);
+
 
     function setupFirewallHandler(){
         player.say("Firewall setup!")
@@ -231,12 +229,7 @@ namespace cyber {
     //% block="%hat"
     //% color="#249ca3" weight=80
     export function requireHat(hat: WearingHat): Rule {
-        if (hat === WearingHat.Hat){
-            return new Rule(10, 20, 30, true);
-        } else {
-            return new Rule(10, 20, 30, false);
-        }
-        
+        return blocks[hat];
     }
 
     /**
@@ -245,40 +238,10 @@ namespace cyber {
     //% block="holding %item"
     //% color="#249ca3" weight=80
     export function requireHoldingItem(item: HoldingItem): Rule {
-        if (item === HoldingItem.Map){
-            return new Rule(10, 20, 30, true);
-        } else if (item === HoldingItem.Stone){
-            return new Rule(10, 20, 30, true);
-        }
-        else {
-            return new Rule(10, 20, 30, false);
-        }
+        return blocks[item];
         
     }
 
-    export function requireLegsOld(lowerLegs: number, upperLegs: number): Rule[] {
-        let rules: Rule[]
-        if (lowerLegs != upperLegs){
-           var lowerNum = Math.min(lowerLegs, upperLegs);
-           var upperNum = Math.max(lowerLegs, upperLegs); 
-        } else{
-            var lowerNum = lowerLegs;
-            var upperNum = lowerLegs;
-        }
-        if (2 >= lowerNum && 2 <= upperNum) {
-            rules.push(new Rule(10, 20, 30, true));
-        }
-        if (4 >= lowerNum && 4 <= upperNum) {
-            rules.push(new Rule(10, 20, 30, true));
-        }
-        if (6 >= lowerNum && 6 <= upperNum) {
-            rules.push(new Rule(10, 20, 30, true));
-        }
-        
-
-        return rules
-        
-    }
 
     /**
      * Legs between rule
@@ -286,13 +249,8 @@ namespace cyber {
     //% block="has %legNum legs"
     //% color="#249ca3" weight=80
     export function requireLegs(legNum: Legs): Rule {
-        if (legNum === Legs.TwoLegs){
-            return new Rule(10, 20, 30, true);
-        } else if (legNum === Legs.FourLegs){
-            return new Rule(10, 20, 30, true);
-        } else
-            return new Rule(10, 20, 30, true);
-        }
+        return blocks[legNum];
+    }
 
 
      /**
@@ -301,7 +259,7 @@ namespace cyber {
     //% block="wearing %eyewear"
     //% color="#249ca3" weight=80
     export function requireEyewear(eyewear: WearingEyeware,): Rule {
-        return new Rule(10, 20, 30, true);
+        return blocks[eyewear];
         
     }
 
