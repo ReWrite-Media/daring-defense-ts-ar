@@ -244,9 +244,15 @@ blocks_rules["13-12"] = new Rule(47, 64, -6, true, "13-12");
 
 let AllowAllRule = new Rule(35, 64, -29, true, "-1")
 let DenyAllRule = new Rule(35, 64, -30, true, "-1")
+let FirewallSetupDoneRule = new Rule(37, 64, -29, true, "-1")
 
     function setupFirewallHandler() {
         player.say("Firewall setup!")
+    }
+
+    function firewallSetupComplete(){
+        // Run once the firewall is complete placing its rule blocks
+        FirewallSetupDoneRule.addRule()
     }
     /**
      * Firewall setup event
@@ -256,6 +262,7 @@ let DenyAllRule = new Rule(35, 64, -30, true, "-1")
     export function setupFirewall(handler: () => void) {
         setupFirewallHandler();
         handler();
+        firewallSetupComplete();
     }
 
     /**
