@@ -245,8 +245,11 @@ blocks_rules["13-12"] = new Rule(47, 64, -6, true, "13-12");
 let AllowAllRule = new Rule(35, 64, -29, true, "-1")
 let DenyAllRule = new Rule(35, 64, -30, true, "-1")
 let FirewallSetupDoneRule = new Rule(37, 64, -29, true, "-1")
+let FirewallSetupStartingRule = new Rule(39, 64, -29, true, "-1")
+
 
     function setupFirewallHandler() {
+        FirewallSetupStartingRule.addRule()
         player.say("Firewall setup!")
     }
 
