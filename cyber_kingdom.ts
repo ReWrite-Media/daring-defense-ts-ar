@@ -374,14 +374,24 @@ let FirewallSetupStartingRule = new Rule(39, 64, -29, true, "-1")
     //% grid.shadow="buildagrid"
     export function requireCrest(grid: SymbolGrid,): Rule {
         if (grid.gridText === `
-    . . . . .
+    # . . . #
     . # . # .
     . . # . .
     . # # # .
-    . . . . .
+    # . # . #
     `){     
             player.say("Royal crest added")
             return blocks_rules[CrestSymbol.RoyalCrest.toString()];
+        }
+        else if (grid.gridText === `
+        . . # . .
+        . # . # .
+        # . # . #
+        . # . # .
+        # . . . #
+        `){ 
+            player.say("Enemy crest added")
+            return blocks_rules[CrestSymbol.EnemyCrest.toString()];
         }
         else{
             player.say("Unknown crest")
