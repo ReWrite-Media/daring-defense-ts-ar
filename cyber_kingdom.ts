@@ -260,7 +260,7 @@ let FirewallSetupStartingRule = new Rule(39, 64, -29, true, "-1")
     /**
      * Firewall setup event
      */
-    //% block="Create Firewall"
+    //% block="Setup Firewall"
     //% color="#569138" weight=100
     export function setupFirewall(handler: () => void) {
         setupFirewallHandler();
