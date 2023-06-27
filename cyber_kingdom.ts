@@ -8,14 +8,14 @@ enum HoldingItem
 {
      //% block="no item"
      NoItem = 0,
-     //% block="sword"
-     Sword = -1,
      //% block="pickaxe"
      Pickaxe = 1,
      //% block="map"
      Map = 2,
+     //% block="sword"
+     Sword = 3,
      //% block="stone"
-     Stone = 3,
+     Stone = -1,
      //% block="hammer"
      Hammer = -1,
      //% block="diamond"
@@ -92,7 +92,7 @@ namespace cyber {
         }
 
         public addRule(): void {
-            player.say(`Placing blocks at ${this.x} ${this.y} ${this.z}`)
+            //player.say(`Placing blocks at ${this.x} ${this.y} ${this.z}`)
             blocks.place(STONE, world(this.x, this.y, this.z))
         }
 
@@ -250,7 +250,7 @@ let FirewallSetupStartingRule = new Rule(39, 64, -29, true, "-1")
 
     function setupFirewallHandler() {
         FirewallSetupStartingRule.addRule()
-        player.say("Firewall setup!")
+        //player.say("Firewall setup!")
     }
 
     function firewallSetupComplete(){
@@ -380,7 +380,7 @@ let FirewallSetupStartingRule = new Rule(39, 64, -29, true, "-1")
     . # # # .
     # . # . #
     `){     
-            player.say("Royal crest added")
+            //player.say("Royal crest added")
             return blocks_rules[CrestSymbol.RoyalCrest.toString()];
         }
         else if (grid.gridText === `
@@ -390,11 +390,11 @@ let FirewallSetupStartingRule = new Rule(39, 64, -29, true, "-1")
         . # . # .
         # . . . #
         `){ 
-            player.say("Enemy crest added")
+            //player.say("Enemy crest added")
             return blocks_rules[CrestSymbol.EnemyCrest.toString()];
         }
         else{
-            player.say("Unknown crest")
+            //player.say("Unknown crest")
             return blocks_rules[CrestSymbol.UnknownCrest.toString()];
         }
 
