@@ -109,8 +109,17 @@ namespace cyber {
         public constructor(rule1: Rule, rule2: Rule) {
 
             super(0, 0, 0, true, "-1");
-            this.rule1 = rule1;
-            this.rule2 = rule2;
+            if (parseInt(rule1.rule_id) > parseInt(rule2.rule_id)) {
+                this.rule2 = rule2;
+                this.rule1 = rule1;
+              } else if (parseInt(rule1.rule_id) < parseInt(rule2.rule_id)) {
+                this.rule1 = rule2;
+                this.rule2 = rule1;
+              } else {
+                // If both rules are the same
+                this.rule1 = rule1;
+                this.rule1 = rule1;
+              }
 
         }
 
@@ -137,19 +146,33 @@ namespace cyber {
 let blocks_rules: {[key: string]: Rule} = {};
 blocks_rules["-1"] = new Rule(33, 64, -24, true, "0" );
 blocks_rules["0"] = new Rule(35, 64, -24, true, "0");
+blocks_rules["0-0"] = new Rule(35, 64, -24, true, "0");
 blocks_rules["1"] = new Rule(36, 64, -24, true, "1");
+blocks_rules["1-1"] = new Rule(36, 64, -24, true, "1");
 blocks_rules["2"] = new Rule(37, 64, -24, true, "2");
+blocks_rules["2-2"] = new Rule(37, 64, -24, true, "2");
 blocks_rules["3"] = new Rule(38, 64, -24, true, "3");
+blocks_rules["3-3"] = new Rule(38, 64, -24, true, "3");
 blocks_rules["4"] = new Rule(39, 64, -24, true, "4");
+blocks_rules["4-4"] = new Rule(39, 64, -24, true, "4");
 blocks_rules["5"] = new Rule(40, 64, -24, true, "5");
+blocks_rules["5-5"] = new Rule(40, 64, -24, true, "5");
 blocks_rules["6"] = new Rule(41, 64, -24, true, "6");
+blocks_rules["6-6"] = new Rule(41, 64, -24, true, "6");
 blocks_rules["7"] = new Rule(42, 64, -24, true, "7");
+blocks_rules["7-7"] = new Rule(42, 64, -24, true, "7");
 blocks_rules["8"] = new Rule(43, 64, -24, true, "8");
+blocks_rules["8-8"] = new Rule(43, 64, -24, true, "8");
 blocks_rules["9"] = new Rule(44, 64, -24, true, "9");
+blocks_rules["9-9"] = new Rule(44, 64, -24, true, "9");
 blocks_rules["10"] = new Rule(45, 64, -24, true, "10");
+blocks_rules["10-10"] = new Rule(45, 64, -24, true, "10");
 blocks_rules["11"] = new Rule(46, 64, -24, true, "11");
+blocks_rules["11-11"] = new Rule(46, 64, -24, true, "11");
 blocks_rules["12"] = new Rule(47, 64, -24, true, "12");
+blocks_rules["12-12"] = new Rule(47, 64, -24, true, "12");
 blocks_rules["13"] = new Rule(48, 64, -24, true, "13");
+blocks_rules["13-13"] = new Rule(48, 64, -24, true, "13");
 blocks_rules["1-0"] = new Rule(35, 64, -18, true, "1-0");
 blocks_rules["2-0"] = new Rule(35, 64, -17, true, "2-0");
 blocks_rules["3-0"] = new Rule(35, 64, -16, true, "3-0");
