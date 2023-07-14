@@ -402,6 +402,12 @@ let FirewallSetupStartingRule = new Rule(39, 64, -29, true, "-1")
     . . # . .
     . # # # .
     # . # . #
+    ` || grid.gridText === `
+    . # # # .
+    # . . . #
+    # # . # #
+    # . . . #
+    . # . # .
     `){     
             //player.say("Royal crest added")
             return blocks_rules[CrestSymbol.RoyalCrest.toString()];
@@ -412,6 +418,12 @@ let FirewallSetupStartingRule = new Rule(39, 64, -29, true, "-1")
         # . # . #
         . # . # .
         # . . . #
+        ` || grid.gridText === `
+        # # . # #
+        # . # . #
+        . # . # .
+        # . # . #
+        . # # # .
         `){ 
             //player.say("Enemy crest added")
             return blocks_rules[CrestSymbol.EnemyCrest.toString()];
