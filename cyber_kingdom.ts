@@ -306,8 +306,10 @@ namespace cyber {
     //% color="#569138" weight=100
     export function setupFirewall(handler: () => void) {
         setupFirewallHandler();
-        handler();
-        firewallSetupComplete();
+        setTimeout(function () {
+            handler();
+            firewallSetupComplete();
+        }, 500);
     }
 
     /**
