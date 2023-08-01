@@ -95,10 +95,12 @@ namespace cyber {
 
         public addRule(): void {
             //player.say(`Placing blocks at ${this.x} ${this.y} ${this.z}`)
+            loops.pause(200);
             blocks.place(STONE, world(this.x, this.y, this.z))
         }
 
         public removeRule(): void {
+            loops.pause(200);
             blocks.place(AIR, world(this.x, this.y, this.z))
         }
     }
