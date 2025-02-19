@@ -1,10 +1,17 @@
 {
-    "name": "Causeway Digital MakeCode Extension",
+    "name": "Cyber Expert Daring Defense",
     "description": "",
-    "dependencies": {
-    },
+    "dependencies": {},
     "files": [
         "custom.ts",
         "README.md"
-    ]
+    ],
+    "targetVersions": {
+        "target": "2.0.30",
+        "targetId": "minecraft"
+    },
+    "supportedTargets": [
+        "minecraft"
+    ],
+    "preferredEditor": "tsprj"
 }
