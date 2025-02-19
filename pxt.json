@@ -1,10 +1,12 @@
 {
-    "name": "Cyber Expert Daring Defense",
+    "name": "Cyber Expert Daring Defense Arabic",
+    "version": "0.0.26",
     "description": "",
     "dependencies": {},
     "files": [
-        "custom.ts",
-        "README.md"
+        "cyber_kingdom.ts",
+        "README.md",
+        "tutorial-info-cache.json"
     ],
     "targetVersions": {
         "target": "2.0.30",
