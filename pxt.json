@@ -3,7 +3,6 @@
     "description": "",
     "dependencies": {},
     "files": [
-        "custom.ts",
         "cyber_kingdom.ts",
         "README.md"
     ],
