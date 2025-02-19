@@ -4,7 +4,8 @@
     "dependencies": {},
     "files": [
         "cyber_kingdom.ts",
-        "README.md"
+        "README.md",
+        "tutorial-info-cache.json"
     ],
     "targetVersions": {
         "target": "2.0.30",
