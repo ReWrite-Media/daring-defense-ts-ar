@@ -6,21 +6,21 @@
 */
 enum HoldingItem
 {
-     //% block="no item"
+     //% block="لا شيء"
      NoItem = 0,
-     //% block="pickaxe"
+     //% block="فأس"
      Pickaxe = 1,
-     //% block="map"
+     //% block="خريطة"
      Map = 2,
-     //% block="sword"
+     //% block="سيف"
      Sword = 3,
-     //% block="stone"
+     //% block="حجر"
      Stone = -1,
-     //% block="hammer"
+     //% block="مطرقة"
      Hammer = -1,
-     //% block="diamond"
+     //% block="ألماس"
      Diamond = -1,
-     //% block="apple"
+     //% block="تفاحة"
      Apple = -1,
 }
 
@@ -29,9 +29,9 @@ enum HoldingItem
 */
 enum WearingHat
 {
-     //% block="wearing nothing on head"
+     //% block="لا يرتدي شيئًا على الرأس"
      NoHat = 4,
-     //% block="wearing hat on head"
+     //% block="يرتدي قبعة على الرأس"
      Hat = 5,
 }
 
@@ -40,9 +40,9 @@ enum WearingHat
 */
 enum WearingEyeware
 {
-     //% block="no eyeware"
+     //% block="بدون نظارات"
      NoEyeware = 6,
-     //% block="sunglasses"
+     //% block="نظارات شمسية"
      WearingEyeware = 7,
 }
 
@@ -55,7 +55,7 @@ enum Legs
      TwoLegs = 8,
      //% block="4"
      FourLegs = 9,
-     //% block="Over 4"
+     //% block="أكثر من"
      OverFourLegs = 10,
 }
 
@@ -64,13 +64,13 @@ enum Legs
 */
 enum CrestSymbol
 {
-     //% block="unknown crest"
+     //% block="شعار غير معروف"
      UnknownCrest = 11,
-     //% block="royal crest"
+     //% block="شعار ملكي"
      RoyalCrest = 12,
-     //% block="enemy crest"
+     //% block="شعار العدو"
      EnemyCrest = 13,
-     //% block="no crest"
+     //% block="لا يوجد شعار"
      NoCrest = 14,
 }
 
@@ -304,7 +304,7 @@ namespace cyber {
     /**
      * Firewall setup event
      */
-    //% block="Setup Firewall"
+    //% block="إعدادات جدار الحماية"
     //% color="#569138" weight=100
     export function setupFirewall(handler: () => void) {
         setupFirewallHandler();
@@ -316,7 +316,7 @@ namespace cyber {
     /**
      * Allow all
      */
-    //% block="Allow all" weight=95
+    //% block="السماح للجميع" weight=95
     export function allowAll() {
         AllowAllRule.addRule()
         //for (let block_key of Object.keys(blocks_rules)) {
@@ -327,7 +327,7 @@ namespace cyber {
     /**
      * Deny all
      */
-    //% block="Deny all" weight=90
+    //% block="رفض الجميع" weight=90
     export function denyAll() {
         DenyAllRule.addRule()
         //for (let block_key of Object.keys(blocks_rules)) {
@@ -338,7 +338,7 @@ namespace cyber {
     /**
     * Add a new allow firewall rule
     */
-    //% block="Add allow firewall rule $firewallRule" weight=85
+    //% block="إضافة قاعدة سماح  إلى جدار الحماية $firewallRule" weight=85
     export function addAllowFirewallRule(firewallRule: Rule | CombinedRule) {
         firewallRule.addRule()
     }
@@ -347,7 +347,7 @@ namespace cyber {
     /**
      * Add a new allow firewall rule
      */
-    //% block="Add deny firewall rule $firewallRule" weight=85
+    //% block="إضافة قاعدة رفض  إلى جدار الحماية $firewallRule" weight=85
     export function addDenyFirewallRule(firewallRule: Rule | CombinedRule) {
         firewallRule.removeRule()
     }
@@ -364,7 +364,7 @@ namespace cyber {
     /**
      * Holding item rule
      */
-    //% block="holding %item"
+    //% block="يحمل %item"
     //% color="#249ca3" weight=80
     export function requireHoldingItem(item: HoldingItem): Rule {
         return blocks_rules[item];
@@ -375,7 +375,7 @@ namespace cyber {
     /**
      * Legs between rule
      */
-    //% block="has %legNum legs"
+    //% block="لديه %legNum أرجل"
     //% color="#249ca3" weight=80
     export function requireLegs(legNum: Legs): Rule {
         return blocks_rules[legNum];
@@ -385,7 +385,7 @@ namespace cyber {
     /**
     * Eyewear rule
     */
-    //% block="wearing %eyewear"
+    //% block="يرتدي %eyewear"
     //% color="#249ca3" weight=80
     export function requireEyewear(eyewear: WearingEyeware,): Rule {
         return blocks_rules[eyewear.toString()];
@@ -396,7 +396,7 @@ namespace cyber {
     /**
      * Combining rules
      */
-    //% block="%rule1 and %rule2"
+    //% block="%rule1 و %rule2"
     //% color="#ff8353" weight=81
     export function ruleAnd(rule1: Rule, rule2: Rule): CombinedRule {
         return new CombinedRule(rule1, rule2);
@@ -414,7 +414,7 @@ namespace cyber {
     /**
     * Guard Crest
     */
-    //% block="has crest of %grid"
+    //% block="يحمل شعار %grid"
     //% color="#249ca3" weight=80
     //% grid.shadow="buildagrid"
     export function requireCrest(grid: SymbolGrid,): Rule {
