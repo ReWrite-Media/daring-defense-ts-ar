@@ -403,7 +403,8 @@ namespace cyber {
     }
 
     //% weight=75
-    //% blockId=buildagrid block="crest"
+    //% blockId=buildagrid 
+    //% block="الشعار"
     //% imageLiteralColumns=5
     //% imageLiteralRows=5
     //% gridLiteral=1
